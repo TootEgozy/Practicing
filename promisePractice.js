@@ -47,6 +47,22 @@ function checkNumber() {
 
 const result = checkNumber();
 
-console.log(result);
-success(result);
-failure(result);
+// console.log(result);
+// success(result);
+// failure(result);
+
+/* 
+3) Promise.all:
+    a. the promise.all is a function that allows you to preform multiple async operations, and do something once they are all fulfilled.  
+    This function returns a promise that is being fulfilled only when all of the previous promises got fulfilled. 
+*/  
+
+function getAJoke() {
+
+    const api = 'https://api.chucknorris.io/jokes/random';
+    
+    const joke = fetch(api)
+    .then(joke=> console.log(joke));
+}
+
+getAJoke();

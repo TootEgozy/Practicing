@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Playground</title>
+</head>
+<body>
+    <h1>Practice</h1>
+
+    <script>
+
+        const api = 'https://api.chucknorris.io/jokes/random';
+
+        function getAJoke() {
+
+        const joke = fetch(api)
+        .then(joke=> console.log(joke.body));
+        };
+
+        function get3Jokes() {
+
+            const fetchJoke1 = fetch(api);
+            const fetchJoke2 = fetch(api);
+            const fetchJoke3 = fetch(api);
+
+            Promise.all([fetchJoke1, fetchJoke2, fetchJoke3])
+            .then(values=> {
+                let mapped = values.map(value=> value.value);
+                console.log(mapped);
+            });
+        }
+
+        function get5Jokes() { 
+            const fetchJoke1 = fetch(api);
+            const fetchJoke2 = fetch(api);
+            const fetchJoke3 = fetch(api);
+            const fetchJoke4 = fetch(api);
+            const fetchJoke5 = fetch(api);
+
+            Promise.all([fetchJoke1, fetchJoke2, fetchJoke3, fetchJoke4, fetchJoke5])
+            .then(jokes=> {
+                return Promise.all(jokes.map((joke, i)=> {
+                    return i;
+                }))
+            })
+            .then(indexes=> console.log(indexes));
+        }
+
+        getAJoke();
+        get3Jokes();
+        get5Jokes();
+
+    </script>
+
+</body>
+</html>
