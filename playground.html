@@ -29,6 +29,7 @@
             });
         }
 
+
         function get5Jokes() { 
             const fetchJoke1 = fetch(api);
             const fetchJoke2 = fetch(api);
@@ -42,7 +43,10 @@
                     return i;
                 }))
             })
-            .then(indexes=> console.log(indexes));
+            .then(indexes=> {
+                return Promise.all(indexes.map(i=> i*2))
+            })
+            .then(indexes=> console.log(indexes))
         }
 
         getAJoke();
