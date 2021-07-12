@@ -4,7 +4,6 @@
 function permutate(...arg) {
     const arr = [...arg];
 
-    //כשכל האינדקסים שלי == 2 סיימתי.
     const indexes = [];
 
     for(i = 0; i < arr.length; i++) {
@@ -16,10 +15,12 @@ function permutate(...arg) {
 
         let ind = indexes[i];
 
-        console.log(arr[i][ind]);
+        // console.log(arr[i][ind]);
     }
 }
 
 permutate(["a", "b", "c"],["d", "e", "f"], ["g", "h", "i"]);
+
+console.log(912 / 100%2);
 
    
