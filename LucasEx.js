@@ -18,7 +18,7 @@ function permutate(...arg) {
         // console.log(arr[i][ind]);
     }
 }
-///
+
 
 permutate(["a", "b", "c"],["d", "e", "f"], ["g", "h", "i"]);
 
